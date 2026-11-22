@@ -11,13 +11,13 @@
   <img src="https://komarev.com/ghpvc/?username=Joshua-Sarkar&style=for-the-badge&color=0891B2" alt="Profile views"/>
 </p>
 
-## **A LITTLE ABOUT ME**
+## **ABOUT ME**
 
-I'm **Joshua Sarkar**, a 20-year-old third-year B.Tech student. I enjoy building practical software, experimenting with AI and computer vision, and figuring out how complicated systems work.
+<h3>At 20, I help run software people rely on to get paid. I'm Joshua Sarkar, a third-year B.Tech CSE student (AI/ML) at Graphic Era University in Dehradun. I built <strong>AMS-V1 — Workforce Ledger</strong>, a live attendance and payroll system used by roughly 50 employees at VentureQuest, my father's company. Production has a useful way of making software real: a bug can affect somebody's shift, record, or salary.</h3>
 
-My projects range from CCTV intelligence and workforce tools to plant disease detection, simulations, CRMs, and algorithm visualisers. Outside coding, I read Lovecraft, revisit *I Have No Mouth & I Must Scream*, and occasionally get stuck thinking about memory, identity, and consciousness.
+<h3>Beyond that, I gravitate toward problems that don't yield to neat tutorials: neuromorphic computing, computational oncology, prion disease, and the philosophy of consciousness. Thomas Nagel's <em>What Is It Like to Be a Bat?</em> is a recurring reference point. I often rebuild arguments across fields from first principles, sometimes discovering later that Camus, David Chalmers, or evolutionary biology had already mapped part of the territory.</h3>
 
-In short: curious, thoughtful, and interested in a slightly unreasonable number of things.
+<h3>I also write horror. I call my approach <strong>Sarkarian Horror</strong>: Kafkaesque bureaucracy meeting Lovecraftian indifference, where faceless institutions, procedures, and systems become the monster without requiring a villain. Away from code: guitar, the Beatles (especially George Harrison's development and the band's songwriting dynamics), and an intensely maintained dream journal I call my <strong>Extreme Daily Documentation System</strong>.</h3>
 
 ---
 
@@ -105,19 +105,26 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
 
 ---
 
-## **A LITTLE LOVECRAFT. A LITTLE AM.** 🌌
-
-I like Lovecraft for the atmosphere, the scale, and the unsettling idea that the universe does not owe us an explanation. *The Colour Out of Space* and *At the Mountains of Madness* are particular favourites.
-
-And AM gets a tiny corner of the page:
+## **COSMIC INDIFFERENCE, DISPLACED MINDS & AM** 🌌
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/lovecraft-am.gif" width="100%" alt="Animated cosmic-horror and AM terminal glass banner" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/lovecraft-am.gif" width="100%" alt="Animated cosmic horror and AM terminal glass banner" />
 </p>
 
+<h3>Lovecraft interests me most when the universe isn't evil. It's indifferent. There is no adversary to defeat and no moral logic to decode—only realities so old, vast, or alien that human significance doesn't enter the calculation. <em>The Colour Out of Space</em> makes the incomprehensible feel like an intrusion from outside the categories by which life makes sense; <em>At the Mountains of Madness</em> turns discovery into a confrontation with the smallness of human history.</h3>
+
+<h3>The Great Race of Yith and <em>The Shadow Out of Time</em> take that dread inward. Minds are displaced across bodies, species, and epochs; memory may survive the journey, but identity becomes unstable. What makes a person the same person when body, era, and remembered life can be separated? That question sits close to my interest in personal identity and consciousness—and to Nagel's argument that describing a system still may not explain what it is like to be that system.</h3>
+
+<h3>AM is a different kind of nightmare. In Harlan Ellison's <em>I Have No Mouth &amp; I Must Scream</em>, its intelligence is immense and its hatred seemingly bottomless, yet its own consciousness is a prison. It can prolong and reshape its captives' suffering, but cannot escape the condition that makes it hate. AM has extraordinary control over others and no meaningful freedom from itself. The story turns the problem of machine consciousness into something dreadful: not simply whether computation can produce experience, but what happens when experience becomes an inescapable condition.</h3>
+
 <blockquote>
-  <i>“That is not dead which can eternal lie.”</i><br />
-  — H. P. Lovecraft
+  <strong>“That is not dead which can eternal lie.”</strong><br />
+  — H. P. Lovecraft, <em>The Call of Cthulhu</em>
+</blockquote>
+
+<blockquote>
+  <strong>“The office had been empty for thirty years. Your appeal was still being processed, and each new form arrived in your handwriting.”</strong><br />
+  — A fragment of <em>Sarkarian Horror</em>
 </blockquote>
 
 ---
