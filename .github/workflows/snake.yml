@@ -1,7 +1,5 @@
 name: Generate Contribution Snake
 
-name: Generate Contribution Snake
-
 on:
   push:
     branches: [main]
