@@ -100,7 +100,7 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
 </table>
 
 <p align="center">
-  <img src="./assets/topography.svg" width="100%" alt="Animated topographic contour divider" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/divider.gif" width="100%" alt="Looping glass topographic divider with astrolabe and AM signal marker" />
 </p>
 
 ---
