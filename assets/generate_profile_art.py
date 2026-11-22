@@ -1,14 +1,43 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import math
 import os
+import subprocess
 
 OUT = os.environ.get("OUTPUT_DIR", "assets/generated")
 os.makedirs(OUT, exist_ok=True)
 
-SERIF = "/usr/share/fonts/truetype/ebgaramond/EBGaramond12-Bold.ttf"
-SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-SANS_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-ITALIC = "/usr/share/fonts/truetype/ebgaramond/EBGaramond12-Italic.ttf"
+
+def resolve_font(pattern, fallback):
+    """Resolve installed font files by family/style; avoid tiny PIL bitmap fallback."""
+    try:
+        path = subprocess.check_output(
+            ["fc-match", "-f", "%{file}", pattern],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+        if path and os.path.isfile(path):
+            return path
+    except (OSError, subprocess.CalledProcessError):
+        pass
+    return fallback
+
+
+SERIF = resolve_font(
+    "EB Garamond:style=Bold",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+)
+SANS = resolve_font(
+    "DejaVu Sans:style=Book",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+)
+SANS_BOLD = resolve_font(
+    "DejaVu Sans:style=Bold",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+)
+ITALIC = resolve_font(
+    "EB Garamond:style=Italic",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf",
+)
 
 PURPLE = (179, 120, 255)
 CYAN = (85, 220, 255)
@@ -21,7 +50,8 @@ def font(path, size):
     try:
         return ImageFont.truetype(path, size)
     except OSError:
-        return ImageFont.load_default()
+        fallback = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+        return ImageFont.truetype(fallback, size)
 
 
 def center_text(draw, xy, text, fnt, fill, anchor="mm"):
@@ -134,28 +164,34 @@ def draw_tentacle(draw, x0, y0, scale=1.0, phase=0.0, colour=(178, 120, 255, 170
 
 def render_hero(frame):
     phase = 2*math.pi*frame/12
-    img = background(1200, 470, phase)
-    glass_panel(img, (70, 24, 1130, 446), 38, GOLD, (10, 13, 38, 166), phase)
+    img = background(1400, 520, phase)
+    glass_panel(img, (64, 24, 1336, 496), 42, GOLD, (10, 13, 38, 178), phase)
     d = ImageDraw.Draw(img)
-    draw_tentacle(d, 92, 392, 1.55, phase, (164, 117, 244, 145))
-    draw_crown(d, 600, 91, 1.05)
-    d.rounded_rectangle((1010, 76, 1086, 135), radius=9,
-                        fill=(38, 9, 28, 210), outline=(255, 93, 113, 210), width=2)
-    d.text((1048, 95), "AM//", font=font(SANS_BOLD, 18),
-           fill=(255, 117, 132, 255), anchor="mm")
-    d.line((1024, 116, 1034, 116, 1040, 109, 1048, 123, 1055, 113, 1073, 113),
-           fill=(255, 85, 110, 230), width=2)
-    draw_glow_text(img, (600, 207), "JOSHUA SARKAR", font(SERIF, 90),
-                   (255, 236, 198, 255), GOLD, blur=13)
-    d = ImageDraw.Draw(img)
-    center_text(d, (600, 292), "B.TECH CSE  ·  AI/ML  ·  GRAPHIC ERA UNIVERSITY",
-                font(SANS_BOLD, 25), (230, 222, 255, 255))
-    center_text(d, (600, 351), "DEHRADUN, INDIA  ·  PRODUCTION SYSTEMS  ·  INDEPENDENT RESEARCH",
-                font(ITALIC, 23), (255, 225, 205, 255))
-    center_text(d, (600, 405), "SOFTWARE THAT PEOPLE USE  ·  HORROR THAT LINGERS",
-                font(SANS_BOLD, 18), (139, 221, 248, 245))
-    return img.convert("RGB")
+    draw_tentacle(d, 86, 435, 1.65, phase, (164, 117, 244, 150))
+    draw_crown(d, 700, 78, 1.15)
 
+    d.rounded_rectangle((1210, 68, 1300, 140), radius=11,
+                        fill=(38, 9, 28, 220), outline=(255, 93, 113, 220), width=2)
+    d.text((1255, 94), "AM//", font=font(SANS_BOLD, 20),
+           fill=(255, 117, 132, 255), anchor="mm")
+    d.line((1228, 119, 1240, 119, 1248, 109, 1256, 128, 1264, 113, 1282, 113),
+           fill=(255, 85, 110, 230), width=2)
+
+    shimmer = (245, 208, 139) if frame % 12 < 6 else (103, 232, 249)
+    draw_glow_text(img, (700, 205), "JOSHUA SARKAR", font(SERIF, 112),
+                   (255, 239, 205, 255), shimmer, blur=17)
+    d = ImageDraw.Draw(img)
+    sweep_x = int(270 + 860 * (frame / 11))
+    d.line((sweep_x, 262, min(1320, sweep_x + 95), 262),
+           fill=(*shimmer, 225), width=3)
+
+    center_text(d, (700, 314), "20  ·  B.TECH CSE  ·  AI/ML",
+                font(SANS_BOLD, 29), (244, 239, 255, 255))
+    center_text(d, (700, 369), "GRAPHIC ERA UNIVERSITY  ·  DEHRADUN, INDIA",
+                font(SANS_BOLD, 22), (191, 224, 255, 255))
+    center_text(d, (700, 430), "PRODUCTION SOFTWARE  ·  COMPUTER VISION  ·  CREATIVE WRITING",
+                font(SANS_BOLD, 18), (139, 221, 248, 255))
+    return img.convert("RGB")
 
 def project_icon(draw, cx, cy, kind, colour):
     if kind == "shield":
@@ -241,11 +277,11 @@ def render_typing(frame, total):
     phase = 2*math.pi*frame/max(1, total)
     img = background(w, h, phase, variant=3)
     glass_panel(img, (10, 8, w-10, h-8), 23, GOLD, (11, 13, 37, 194), phase)
-    message = "Curious. Thoughtful. Interested in building things."
+    message = "AI/ML  ·  PRODUCTION SOFTWARE  ·  CREATIVE WRITING"
     reveal = min(len(message), max(0, frame*2))
     visible = message[:reveal]
     d = ImageDraw.Draw(img)
-    f = font(ITALIC, 34)
+    f = font(SANS_BOLD, 27)
     x, y = 45, 48
     d.text((x, y), visible, font=f, fill=(255, 233, 204, 255), anchor="lm")
     bbox = d.textbbox((x, y), visible, font=f, anchor="lm")
