@@ -48,7 +48,7 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
     <td width="50%" valign="top">
       <h3>💊 <a href="https://github.com/Joshua-Sarkar/PharmaLock-Pharmacy-Drug-Inventory-Engine">PharmaLock</a></h3>
       <p>A pharmacy inventory engine that doubles as a playground for systems concepts: locks, deadlock detection, transaction logs, crash recovery, and buffer pools. Things get interesting when multiple operations want the same resource.</p>
-      <img src="https://img.shields.io/badge/Systems- F97316?style=flat-square" />
+      <img src="https://img.shields.io/badge/Systems-Programming-F97316?style=flat-square" />
       <img src="https://img.shields.io/badge/Database%20Concepts-7C3AED?style=flat-square" />
     </td>
   </tr>
