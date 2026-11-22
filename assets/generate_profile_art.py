@@ -258,6 +258,29 @@ def render_typing(frame, total):
     return img.convert("RGB")
 
 
+
+def render_divider(frame):
+    phase = 2*math.pi*frame/12
+    img = background(1200, 110, phase, variant=3)
+    glass_panel(img, (8, 7, 1192, 103), 22, GOLD, (12, 13, 39, 150), phase, border=1)
+    d = ImageDraw.Draw(img)
+    draw_tentacle(d, 12, 98, .72, phase, (178, 120, 255, 125))
+    # An understated astrolabe-like orbit in the centre.
+    cx, cy = 600, 55
+    for radius, colour, width in [(27, (245, 208, 139, 160), 1), (19, (103, 232, 249, 135), 1)]:
+        d.ellipse((cx-radius, cy-radius, cx+radius, cy+radius), outline=colour, width=width)
+    angle = phase
+    px = int(cx + 27*math.cos(angle))
+    py = int(cy + 27*math.sin(angle))
+    d.ellipse((px-3, py-3, px+3, py+3), fill=(255, 225, 170, 245))
+    d.line((95, 55, 490, 55), fill=(179, 120, 255, 145), width=1)
+    d.line((710, 55, 1105, 55), fill=(85, 220, 255, 145), width=1)
+    d.rounded_rectangle((1130, 27, 1170, 76), radius=8,
+                        fill=(35, 8, 30, 165), outline=(255, 91, 112, 145), width=1)
+    d.text((1150, 51), "AM", font=font(SANS_BOLD, 11), fill=(255, 117, 132, 235), anchor="mm")
+    return img.convert("RGB")
+
+
 def save_loop(frames, name, duration=220):
     path = os.path.join(OUT, name)
     palette_frames = [
@@ -275,3 +298,4 @@ save_loop([render_hero(i) for i in range(12)], "hero.gif", 230)
 save_loop([render_projects(i) for i in range(12)], "projects-glass.gif", 230)
 save_loop([render_lore(i) for i in range(12)], "lovecraft-am.gif", 230)
 save_loop([render_typing(i, 32) for i in range(32)], "tagline.gif", 130)
+save_loop([render_divider(i) for i in range(12)], "divider.gif", 230)
