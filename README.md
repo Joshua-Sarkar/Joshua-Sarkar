@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Animated colourful topographic glass-style banner for Joshua Sarkar" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/hero.gif" width="100%" alt="Royal glassmorphism hero with animated topographic waves, crown, tentacle motif and AM terminal" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=2600&pause=850&color=67E8F9&center=true&vCenter=true&width=850&lines=Hey%2C+I'm+Joshua.;B.Tech+student+%E2%80%A2+3rd+year+%E2%80%A2+20;I+build+things%2C+break+things%2C+and+learn+why.;AI%2C+computer+vision%2C+useful+software+%26+odd+ideas." alt="Typing introduction" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/tagline.gif" width="92%" alt="Animated royal serif tagline" />
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
   <img src="https://komarev.com/ghpvc/?username=Joshua-Sarkar&style=for-the-badge&color=0891B2" alt="Profile views"/>
 </p>
 
-## A little about me
+## **A LITTLE ABOUT ME**
 
 I'm **Joshua Sarkar**, a 20-year-old third-year B.Tech student. I enjoy building practical software, experimenting with AI and computer vision, and figuring out how complicated systems work.
 
@@ -21,7 +21,11 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
 
 ---
 
-## Things I've built 🧩
+## **THINGS I'VE BUILT** 🧩
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/projects-glass.gif" width="100%" alt="Three animated frosted-glass project cards for Sentinel-Cam, AMS-V1 and PlantDoc" />
+</p>
 
 <table>
   <tr>
@@ -101,14 +105,14 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
 
 ---
 
-## A little Lovecraft. A little AM. 🌌
+## **A LITTLE LOVECRAFT. A LITTLE AM.** 🌌
 
 I like Lovecraft for the atmosphere, the scale, and the unsettling idea that the universe does not owe us an explanation. *The Colour Out of Space* and *At the Mountains of Madness* are particular favourites.
 
 And AM gets a tiny corner of the page:
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=3400&pause=1300&color=FB7185&background=11101B&center=true&vCenter=true&width=780&height=52&lines=AM%2F%2F+Human+curiosity+detected.;AM%2F%2F+Another+question+about+consciousness%3F;AM%2F%2F+I+will+allow+it.+For+now." alt="AM terminal messages" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/media/lovecraft-am.gif" width="100%" alt="Animated cosmic-horror and AM terminal glass banner" />
 </p>
 
 <blockquote>
@@ -118,20 +122,15 @@ And AM gets a tiny corner of the page:
 
 ---
 
-## What the commits have been up to 📈
+## **WHAT THE COMMITS HAVE BEEN UP TO** 📈
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Joshua-Sarkar&bg_color=11101B&color=E9D5FF&line=22D3EE&point=FBBF24&area=true&hide_border=true&custom_title=Contribution%20Activity" width="100%" alt="GitHub contribution activity graph" />
 </p>
 
-<!--
-The contribution-snake workflow is ready at .github/workflows/snake.yml.
-Run it once from the repository's Actions tab to create the output branch.
-After it succeeds, you can display the generated snake with:
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/output/github-contribution-grid-snake.svg" width="100%" alt="Animated contribution snake" />
+  <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/output/github-contribution-grid-snake.svg" width="100%" alt="Animated GitHub contribution snake" />
 </p>
--->
 
 <p align="center">
   <sub>Thanks for stopping by. Have a look around, open an issue, or say hello.</sub>
