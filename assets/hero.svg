@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="430" viewBox="0 0 1400 430" role="img" aria-label="Joshua Sarkar profile banner with animated topographic waves and glass card">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#160B35"/><stop offset=".35" stop-color="#4C1D95"/><stop offset=".68" stop-color="#075985"/><stop offset="1" stop-color="#9D174D"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F0ABFC"/><stop offset=".43" stop-color="#67E8F9"/><stop offset=".75" stop-color="#FDE68A"/><stop offset="1" stop-color="#FDA4AF"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".06"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#E879F9" stop-opacity=".50"/><stop offset="1" stop-color="#E879F9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="430" rx="26" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="300" fill="url(#halo)"><animate attributeName="cx" values="180;400;180" dur="18s" repeatCount="indefinite"/></circle>
+  <circle cx="1220" cy="300" r="310" fill="url(#halo)" opacity=".65"><animate attributeName="cx" values="1220;980;1220" dur="21s" repeatCount="indefinite"/></circle>
+  <g fill="none" stroke="url(#line)" stroke-width="1.6" opacity=".45">
+    <g>
+      <path d="M-60 55 C100 -20 230 155 390 70 S690 5 860 90 S1170 165 1460 35"/>
+      <path d="M-60 72 C100 -3 230 172 390 87 S690 22 860 107 S1170 182 1460 52"/>
+      <path d="M-60 89 C100 14 230 189 390 104 S690 39 860 124 S1170 199 1460 69"/>
+      <path d="M-60 106 C100 31 230 206 390 121 S690 56 860 141 S1170 216 1460 86"/>
+      <path d="M-60 123 C100 48 230 223 390 138 S690 73 860 158 S1170 233 1460 103"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 22;0 0" dur="17s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <path d="M-60 300 C120 390 260 230 430 305 S720 390 890 300 S1190 225 1460 340"/>
+      <path d="M-60 316 C120 406 260 246 430 321 S720 406 890 316 S1190 241 1460 356"/>
+      <path d="M-60 332 C120 422 260 262 430 337 S720 422 890 332 S1190 257 1460 372"/>
+      <path d="M-60 348 C120 438 260 278 430 353 S720 438 890 348 S1190 273 1460 388"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -18;0 0" dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <rect x="185" y="68" width="1030" height="294" rx="30" fill="url(#glass)" stroke="#FFFFFF" stroke-opacity=".38" stroke-width="2"/>
+  <rect x="198" y="81" width="1004" height="268" rx="22" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <path d="M235 112 H355 M1045 112 H1165" stroke="#FDE68A" stroke-opacity=".65" stroke-width="2"/>
+  <circle cx="700" cy="112" r="4" fill="#FDE68A"><animate attributeName="opacity" values=".35;1;.35" dur="3s" repeatCount="indefinite"/></circle>
+  <text x="700" y="205" text-anchor="middle" fill="#FFF7ED" font-family="Georgia, 'Times New Roman', serif" font-size="76" letter-spacing="1">Joshua Sarkar</text>
+  <text x="700" y="255" text-anchor="middle" fill="#E9D5FF" font-family="Arial, sans-serif" font-size="23" letter-spacing="2">B.TECH STUDENT  ·  3RD YEAR  ·  20</text>
+  <text x="700" y="306" text-anchor="middle" fill="#BAE6FD" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic">Curious · Thoughtful · Interested in how things work</text>
+  <g fill="#FDE68A" opacity=".9">
+    <circle cx="246" cy="305" r="2.5"><animate attributeName="opacity" values=".25;1;.25" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1150" cy="145" r="2.5"><animate attributeName="opacity" values=".25;1;.25" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="325" r="2"><animate attributeName="opacity" values=".25;1;.25" dur="3.4s" repeatCount="indefinite"/></circle>
+  </g>
+  <rect x="1" y="1" width="1398" height="428" rx="25" fill="none" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="2"/>
+</svg>
