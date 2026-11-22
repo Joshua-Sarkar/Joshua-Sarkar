@@ -5,10 +5,10 @@ import os
 OUT = os.environ.get("OUTPUT_DIR", "assets/generated")
 os.makedirs(OUT, exist_ok=True)
 
-SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+SERIF = "/usr/share/fonts/truetype/ebgaramond/EBGaramond12-Bold.ttf"
 SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 SANS_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-ITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"
+ITALIC = "/usr/share/fonts/truetype/ebgaramond/EBGaramond12-Italic.ttf"
 
 PURPLE = (179, 120, 255)
 CYAN = (85, 220, 255)
