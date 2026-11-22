@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="340" viewBox="0 0 1400 340" role="img" aria-label="Animated colourful topographic contour background">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160B35"/>
+      <stop offset="38%" stop-color="#48218A"/>
+      <stop offset="72%" stop-color="#075B83"/>
+      <stop offset="100%" stop-color="#8B315F"/>
+    </linearGradient>
+    <linearGradient id="contours" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0ABFC" stop-opacity=".8"/>
+      <stop offset="38%" stop-color="#67E8F9" stop-opacity=".75"/>
+      <stop offset="72%" stop-color="#FDE68A" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="#FDA4AF" stop-opacity=".7"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#F0ABFC" stop-opacity=".48"/>
+      <stop offset="100%" stop-color="#F0ABFC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="340" fill="url(#bg)"/>
+  <circle cx="250" cy="80" r="240" fill="url(#glow)">
+    <animate attributeName="cx" values="250;430;250" dur="18s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1120" cy="250" r="260" fill="url(#glow)" opacity=".65">
+    <animate attributeName="cx" values="1120;920;1120" dur="21s" repeatCount="indefinite"/>
+  </circle>
+  <g fill="none" stroke="url(#contours)" stroke-width="1.5" opacity=".48">
+    <g>
+      <path d="M-80 40 C100 -35 210 120 390 45 S690 -10 850 70 S1160 135 1480 20"/>
+      <path d="M-80 55 C100 -20 210 135 390 60 S690 5 850 85 S1160 150 1480 35"/>
+      <path d="M-80 70 C100 -5 210 150 390 75 S690 20 850 100 S1160 165 1480 50"/>
+      <path d="M-80 85 C100 10 210 165 390 90 S690 35 850 115 S1160 180 1480 65"/>
+      <path d="M-80 100 C100 25 210 180 390 105 S690 50 850 130 S1160 195 1480 80"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 18;0 0" dur="16s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <path d="M-70 215 C100 300 245 145 410 220 S700 305 870 215 S1190 135 1470 255"/>
+      <path d="M-70 230 C100 315 245 160 410 235 S700 320 870 230 S1190 150 1470 270"/>
+      <path d="M-70 245 C100 330 245 175 410 250 S700 335 870 245 S1190 165 1470 285"/>
+      <path d="M-70 260 C100 345 245 190 410 265 S700 350 870 260 S1190 180 1470 300"/>
+      <path d="M-70 275 C100 360 245 205 410 280 S700 365 870 275 S1190 195 1470 315"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -16;0 0" dur="19s" repeatCount="indefinite"/>
+    </g>
+    <g opacity=".65">
+      <path d="M180 -30 C300 40 270 155 385 170 C500 185 560 85 680 120 C800 155 770 280 900 350"/>
+      <path d="M195 -30 C315 40 285 155 400 170 C515 185 575 85 695 120 C815 155 785 280 915 350"/>
+      <path d="M210 -30 C330 40 300 155 415 170 C530 185 590 85 710 120 C830 155 800 280 930 350"/>
+      <path d="M225 -30 C345 40 315 155 430 170 C545 185 605 85 725 120 C845 155 815 280 945 350"/>
+      <animateTransform attributeName="transform" type="translate" values="-18 0;18 0;-18 0" dur="24s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <g fill="#FDE68A">
+    <circle cx="180" cy="112" r="2.5"><animate attributeName="opacity" values=".25;1;.25" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="610" cy="58" r="2"><animate attributeName="opacity" values=".3;1;.3" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="1040" cy="95" r="2.5"><animate attributeName="opacity" values=".2;.9;.2" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="1260" cy="244" r="2"><animate attributeName="opacity" values=".25;1;.25" dur="4.2s" repeatCount="indefinite"/></circle>
+  </g>
+  <rect x="1" y="1" width="1398" height="338" rx="22" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width="2"/>
+</svg>
