@@ -330,8 +330,220 @@ def save_loop(frames, name, duration=220):
     print(f"created {path} ({os.path.getsize(path)} bytes)")
 
 
+
+
+REPOSITORIES = [
+    {
+        "slug": "sentinel-cam-enterprise", "title": "SENTINEL-CAM",
+        "subtitle": "AI CCTV  ·  OBJECT DETECTION  ·  FACE RECOGNITION  ·  SECURITY EVENTS",
+        "steps": ["CAMERA FEED", "OPENCV", "YOLO TASK", "EVENT LOG", "ALERT"],
+        "accent": (255, 86, 112), "secondary": (70, 205, 255),
+        "note": "Django + OpenCV + Ultralytics",
+    },
+    {
+        "slug": "ams-v1", "title": "AMS-V1  /  WORKFORCE LEDGER",
+        "subtitle": "LIVE WORKFORCE OPERATIONS  ·  ATTENDANCE  ·  LEAVE  ·  PAYROLL",
+        "steps": ["AUTH + ROLES", "WORKFORCE", "ATTENDANCE", "LEAVE LEDGER", "PAYROLL"],
+        "accent": (197, 151, 87), "secondary": (233, 210, 170),
+        "note": "Laravel 12  ·  MySQL  ·  Blade",
+    },
+    {
+        "slug": "plantdoc", "title": "PLANTDOC",
+        "subtitle": "PLANT DISEASE ANALYSIS  ·  38 CLASSES  ·  GRAD-CAM  ·  IOT CONTEXT",
+        "steps": ["LEAF IMAGE", "TFLITE", "38 CLASSES", "GRAD-CAM", "IOT CONTEXT"],
+        "accent": (94, 212, 133), "secondary": (72, 216, 211),
+        "note": "TensorFlow Lite  ·  FastAPI  ·  React",
+    },
+    {
+        "slug": "pharmalock", "title": "PHARMALOCK",
+        "subtitle": "PHARMACY INVENTORY  ·  TRANSACTIONS  ·  LOCKING  ·  RECOVERY",
+        "steps": ["REQUEST", "LOCK MANAGER", "WAL", "BUFFER POOL", "COMMIT / UNDO"],
+        "accent": (57, 212, 160), "secondary": (246, 183, 91),
+        "note": "Operating Systems meet Database Systems",
+    },
+    {
+        "slug": "wacrm-fusion", "title": "WACRM-FUSION",
+        "subtitle": "WHATSAPP CRM  ·  SHARED INBOX  ·  AUTOMATIONS  ·  SALES PIPELINES",
+        "steps": ["WHATSAPP", "WEBHOOK", "INBOX / FLOWS", "AUTOMATIONS", "TEAM CRM"],
+        "accent": (44, 211, 146), "secondary": (82, 222, 211),
+        "note": "Next.js 16  ·  PostgreSQL  ·  Prisma",
+    },
+    {
+        "slug": "scout-lead-intelligence", "title": "SCOUT  /  LEAD INTELLIGENCE",
+        "subtitle": "LOCAL DISCOVERY  ·  QUALIFICATION  ·  WEBSITE RESEARCH  ·  OUTREACH",
+        "steps": ["OSM SEARCH", "BOUNDARY FILTER", "CLASSIFY", "RESEARCH", "DRAFT + SYNC"],
+        "accent": (249, 151, 77), "secondary": (125, 215, 129),
+        "note": "Client-aware research pipeline",
+    },
+    {
+        "slug": "ehr-deidentification-blockchain", "title": "MEDICAL DATA  /  PROVENANCE",
+        "subtitle": "TEXT DE-IDENTIFICATION  ·  HASH FINGERPRINTS  ·  BLOCKCHAIN AUDIT",
+        "steps": ["MEDICAL TEXT", "SPACY NER", "REDACT", "SHA-256", "GANACHE LOG"],
+        "accent": (88, 176, 255), "secondary": (173, 130, 255),
+        "note": "Flask  ·  spaCy  ·  Web3.py",
+    },
+    {
+        "slug": "blood-circulation-simulation", "title": "VASCULAR FLOW SIMULATOR",
+        "subtitle": "GRAPH NETWORK  ·  BLOOD-CELL QUEUES  ·  TEMPORARY BLOCKAGES",
+        "steps": ["VESSEL GRAPH", "CELL QUEUE", "SIM TICK", "BLOCKAGE", "STATE API"],
+        "accent": (255, 94, 115), "secondary": (72, 210, 240),
+        "note": "C  ·  libmicrohttpd  ·  JavaScript",
+    },
+    {
+        "slug": "aerodaa-airline-pricing", "title": "AERODAA  /  AIRLINE PRICING",
+        "subtitle": "FLIGHT SEARCH  ·  GREEDY FARES  ·  QUICK SORT  ·  BOOKINGS",
+        "steps": ["ROUTE SEARCH", "GREEDY FARE", "DP CACHE", "QUICK SORT", "BOOKING"],
+        "accent": (246, 190, 85), "secondary": (91, 174, 255),
+        "note": "C++  ·  CSV persistence  ·  Web visualiser",
+    },
+    {
+        "slug": "ams-golden-frozen-master", "title": "AMS  /  GOLDEN FROZEN MASTER",
+        "subtitle": "PRESERVED RELEASE BASELINE  ·  WORKFORCE LEDGER",
+        "steps": ["FROZEN BASE", "AUTH + ROLES", "ATTENDANCE", "LEAVE LEDGER", "PAYROLL"],
+        "accent": (226, 177, 91), "secondary": (236, 216, 174),
+        "note": "Private release snapshot",
+    },
+    {
+        "slug": "future-corridor-ams", "title": "FUTURE CORRIDOR  /  AMS",
+        "subtitle": "CLIENT EDITION  ·  LIQUID GLASS  ·  ROYAL LAVENDER DESIGN SYSTEM",
+        "steps": ["CLIENT SHELL", "WORKFORCE", "ATTENDANCE", "GOVERNANCE", "OPERATIONS"],
+        "accent": (115, 119, 255), "secondary": (90, 199, 255),
+        "note": "Private client deployment variant",
+    },
+    {
+        "slug": "dwheelz-ams", "title": "DWHEELZ  /  AMS",
+        "subtitle": "CLIENT-BRANDED WORKFORCE MANAGEMENT DEPLOYMENT",
+        "steps": ["CLIENT BRAND", "AUTH + ROLES", "WORKFORCE", "ATTENDANCE", "LEAVE + PAYROLL"],
+        "accent": (244, 143, 75), "secondary": (87, 204, 221),
+        "note": "Private client deployment variant",
+    },
+]
+
+
+def fit_font(text, path, max_width, size, minimum=22):
+    """Shrink a heading just enough to fit; always use a scalable font."""
+    draw = ImageDraw.Draw(Image.new("RGB", (2, 2)))
+    while size > minimum:
+        f = font(path, size)
+        if draw.textbbox((0, 0), text, font=f)[2] <= max_width:
+            return f
+        size -= 2
+    return font(path, minimum)
+
+
+def render_repo_hero(config, frame, index):
+    phase = 2 * math.pi * frame / 10
+    img = background(1400, 360, phase, variant=index % 4)
+    accent = config["accent"]
+    secondary = config["secondary"]
+    glass_panel(img, (36, 24, 1364, 336), 34, accent, (9, 13, 37, 186), phase)
+    d = ImageDraw.Draw(img)
+
+    # Project-specific orbital marks, nodes and circuit traces.
+    for ring in (28, 44, 62):
+        x = 92 + ring // 4 * math.sin(phase)
+        d.ellipse((x-ring, 180-ring, x+ring, 180+ring),
+                  outline=(*secondary, 80 + ring), width=1)
+    for i in range(7):
+        x = 190 + i * 168
+        y = 70 + int(10 * math.sin(phase + i * .7))
+        d.line((x, y, x+54, y), fill=(*accent, 100), width=2)
+        d.ellipse((x+51, y-3, x+57, y+3), fill=(*secondary, 200))
+
+    title_size = 68 if len(config["title"]) < 22 else 56
+    draw_glow_text(
+        img, (700, 148), config["title"],
+        fit_font(config["title"], SANS_BOLD, 1180, title_size),
+        (246, 243, 255, 255), accent, blur=14,
+    )
+    d = ImageDraw.Draw(img)
+    center_text(d, (700, 220), config["subtitle"],
+                fit_font(config["subtitle"], SANS_BOLD, 1180, 22, 15),
+                (198, 221, 255, 255))
+    center_text(d, (700, 278), config["note"],
+                fit_font(config["note"], ITALIC, 1180, 24, 17),
+                (255, 221, 187, 255))
+
+    # A moving highlight runs around the frosted panel.
+    sweep = int(60 + 1280 * frame / 9)
+    d.line((sweep, 30, min(1340, sweep+85), 30),
+           fill=(*secondary, 230), width=3)
+    d.rounded_rectangle((1262, 50, 1322, 92), radius=9,
+                        fill=(28, 10, 32, 190), outline=(*accent, 190), width=2)
+    d.text((1292, 71), "BUILD", font=font(SANS_BOLD, 13),
+           fill=(255, 240, 220, 245), anchor="mm")
+    return img.convert("RGB")
+
+
+def render_repo_flow(config, frame, index):
+    phase = 2 * math.pi * frame / 10
+    img = background(1400, 245, phase, variant=(index+2) % 4)
+    accent = config["accent"]
+    secondary = config["secondary"]
+    glass_panel(img, (22, 14, 1378, 231), 28, secondary, (9, 13, 37, 178), phase, border=1)
+    d = ImageDraw.Draw(img)
+    center_text(d, (700, 48), "HOW THE SYSTEM MOVES",
+                font(SANS_BOLD, 22), (235, 233, 255, 250))
+    labels = config["steps"]
+    left, gap, width = 46, 24, 236
+    active = frame % len(labels)
+    for i, label in enumerate(labels):
+        x = left + i * (width + gap)
+        y = 94
+        chosen = i == active
+        border = accent if chosen else secondary
+        fill = (35, 24, 66, 225) if chosen else (12, 23, 48, 220)
+        d.rounded_rectangle((x, y, x+width, y+91), radius=17,
+                            fill=fill, outline=(*border, 235 if chosen else 120),
+                            width=3 if chosen else 1)
+        if chosen:
+            glow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            gd = ImageDraw.Draw(glow)
+            gd.rounded_rectangle((x-2, y-2, x+width+2, y+93), radius=18,
+                                 outline=(*accent, 190), width=4)
+            img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(10)))
+            d = ImageDraw.Draw(img)
+        center_text(d, (x+width//2, y+43), label,
+                    fit_font(label, SANS_BOLD, width-24, 19, 13),
+                    (255, 246, 225, 255) if chosen else (198, 221, 255, 235))
+        if i < len(labels)-1:
+            x1 = x+width+4
+            d.line((x1, y+45, x1+gap-7, y+45), fill=(*secondary, 220), width=2)
+            d.polygon([(x1+gap-7, y+39), (x1+gap-1, y+45), (x1+gap-7, y+51)],
+                      fill=(*secondary, 220))
+    return img.convert("RGB")
+
+
+def save_to_path(frames, path, duration=190):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    palette_frames = [
+        im.convert("P", palette=Image.Palette.ADAPTIVE, colors=192)
+        for im in frames
+    ]
+    palette_frames[0].save(
+        path, save_all=True, append_images=palette_frames[1:],
+        duration=duration, loop=0, optimize=True, disposal=2,
+    )
+    print(f"created {path} ({os.path.getsize(path)} bytes)")
+
+
+def generate_repository_art():
+    for index, config in enumerate(REPOSITORIES):
+        folder = os.path.join(OUT, "repositories", config["slug"])
+        save_to_path(
+            [render_repo_hero(config, frame, index) for frame in range(10)],
+            os.path.join(folder, "hero.gif"), 190,
+        )
+        save_to_path(
+            [render_repo_flow(config, frame, index) for frame in range(10)],
+            os.path.join(folder, "flow.gif"), 210,
+        )
+
+
+
 save_loop([render_hero(i) for i in range(12)], "hero.gif", 230)
 save_loop([render_projects(i) for i in range(12)], "projects-glass.gif", 230)
 save_loop([render_lore(i) for i in range(12)], "lovecraft-am.gif", 230)
 save_loop([render_typing(i, 32) for i in range(32)], "tagline.gif", 130)
 save_loop([render_divider(i) for i in range(12)], "divider.gif", 230)
+generate_repository_art()
