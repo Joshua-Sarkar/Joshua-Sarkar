@@ -95,6 +95,10 @@ In short: curious, thoughtful, and interested in a slightly unreasonable number 
   </tr>
 </table>
 
+<p align="center">
+  <img src="./assets/topography.svg" width="100%" alt="Animated topographic contour divider" />
+</p>
+
 ---
 
 ## A little Lovecraft. A little AM. 🌌
@@ -120,9 +124,14 @@ And AM gets a tiny corner of the page:
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Joshua-Sarkar&bg_color=11101B&color=E9D5FF&line=22D3EE&point=FBBF24&area=true&hide_border=true&custom_title=Contribution%20Activity" width="100%" alt="GitHub contribution activity graph" />
 </p>
 
+<!--
+The contribution-snake workflow is ready at .github/workflows/snake.yml.
+Run it once from the repository's Actions tab to create the output branch.
+After it succeeds, you can display the generated snake with:
 <p align="center">
   <img src="https://raw.githubusercontent.com/Joshua-Sarkar/Joshua-Sarkar/output/github-contribution-grid-snake.svg" width="100%" alt="Animated contribution snake" />
 </p>
+-->
 
 <p align="center">
   <sub>Thanks for stopping by. Have a look around, open an issue, or say hello.</sub>
