@@ -145,15 +145,15 @@ def render_hero(frame):
            fill=(255, 117, 132, 245), anchor="mm")
     d.line((1024, 124, 1034, 124, 1040, 117, 1048, 131, 1055, 121, 1073, 121),
            fill=(255, 85, 110, 210), width=2)
-    draw_glow_text(img, (600, 197), "JOSHUA SARKAR", font(SERIF, 68),
+    draw_glow_text(img, (600, 197), "JOSHUA SARKAR", font(SERIF, 90),
                    (255, 236, 198, 255), GOLD, blur=11)
     d = ImageDraw.Draw(img)
-    center_text(d, (600, 253), "B.TECH STUDENT  ·  3RD YEAR",
-                font(SANS_BOLD, 22), (230, 222, 255, 255))
-    center_text(d, (600, 308), "Curious. Thoughtful. Interested in building things.",
-                font(ITALIC, 24), (255, 225, 205, 255))
-    center_text(d, (600, 349), "AI  ·  COMPUTER VISION  ·  SOFTWARE  ·  SYSTEMS",
-                font(SANS_BOLD, 14), (139, 221, 248, 245))
+    center_text(d, (600, 254), "B.TECH CSE  ·  AI/ML  ·  GRAPHIC ERA UNIVERSITY",
+                font(SANS_BOLD, 24), (230, 222, 255, 255))
+    center_text(d, (600, 308), "DEHRADUN, INDIA  ·  PRODUCTION SYSTEMS  ·  INDEPENDENT RESEARCH",
+                font(ITALIC, 22), (255, 225, 205, 255))
+    center_text(d, (600, 350), "SOFTWARE THAT PEOPLE USE  ·  HORROR THAT LINGERS",
+                font(SANS_BOLD, 17), (139, 221, 248, 245))
     return img.convert("RGB")
 
 
@@ -184,7 +184,7 @@ def render_projects(frame):
     draw_tentacle(d, 4, 368, .95, phase, (164, 117, 244, 105))
     d.rounded_rectangle((1102, 12, 1176, 58), radius=8, fill=(35, 8, 30, 170),
                         outline=(255, 91, 112, 160), width=2)
-    d.text((1139, 34), "AM//", font=font(SANS_BOLD, 15),
+    d.text((1139, 34), "AM//", font=font(SANS_BOLD, 18),
            fill=(255, 117, 132, 235), anchor="mm")
     center_text(d, (600, 37), "A FEW THINGS I BUILD",
                 font(SERIF, 31), (255, 230, 187, 250))
@@ -199,9 +199,9 @@ def render_projects(frame):
         glass_panel(img, (x, 82, x+350, 344), 30, colour, (13, 15, 43, 178), phase+idx*.7)
         d = ImageDraw.Draw(img)
         project_icon(d, x+175, 146, icon, colour)
-        center_text(d, (x+175, 214), title, font(SERIF, 29), (255, 238, 211, 255))
-        center_text(d, (x+175, 258), kicker, font(SANS_BOLD, 14), (*colour, 255))
-        center_text(d, (x+175, 291), sub, font(SANS, 14), (230, 225, 249, 250))
+        center_text(d, (x+175, 214), title, font(SERIF, 35), (255, 238, 211, 255))
+        center_text(d, (x+175, 258), kicker, font(SANS_BOLD, 16), (*colour, 255))
+        center_text(d, (x+175, 291), sub, font(SANS, 17), (230, 225, 249, 250))
         gx = int(x + 20 + 310*(.5 + .5*math.sin(phase+idx)))
         d.line((gx, 335, gx+45, 335), fill=(*colour, 235), width=3)
     return img.convert("RGB")
@@ -227,12 +227,12 @@ def render_lore(frame):
     d.text((1102, 188), "SIGNAL", font=font(SANS_BOLD, 10),
            fill=(249, 173, 182, 220), anchor="mm")
     draw_glow_text(img, (600, 111), "A LITTLE LOVECRAFT. A LITTLE AM.",
-                   font(SERIF, 36), (255, 231, 194, 255), GOLD, blur=8)
+                   font(SERIF, 39), (255, 231, 194, 255), GOLD, blur=8)
     d = ImageDraw.Draw(img)
     center_text(d, (600, 169), "COSMIC HORROR, MACHINE MINDS & QUESTIONS THAT LINGER",
                 font(SANS_BOLD, 15), (211, 222, 255, 250))
     center_text(d, (600, 207), "Strange stories. Unsettling machines. Questions that linger.",
-                font(ITALIC, 17), (234, 206, 231, 255))
+                font(ITALIC, 20), (234, 206, 231, 255))
     return img.convert("RGB")
 
 
@@ -245,7 +245,7 @@ def render_typing(frame, total):
     reveal = min(len(message), max(0, frame*2))
     visible = message[:reveal]
     d = ImageDraw.Draw(img)
-    f = font(ITALIC, 29)
+    f = font(ITALIC, 34)
     x, y = 45, 48
     d.text((x, y), visible, font=f, fill=(255, 233, 204, 255), anchor="lm")
     bbox = d.textbbox((x, y), visible, font=f, anchor="lm")
