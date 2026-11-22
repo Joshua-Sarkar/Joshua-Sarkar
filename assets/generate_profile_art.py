@@ -134,26 +134,26 @@ def draw_tentacle(draw, x0, y0, scale=1.0, phase=0.0, colour=(178, 120, 255, 170
 
 def render_hero(frame):
     phase = 2*math.pi*frame/12
-    img = background(1200, 430, phase)
-    glass_panel(img, (70, 42, 1130, 388), 38, GOLD, (10, 13, 38, 166), phase)
+    img = background(1200, 470, phase)
+    glass_panel(img, (70, 24, 1130, 446), 38, GOLD, (10, 13, 38, 166), phase)
     d = ImageDraw.Draw(img)
-    draw_tentacle(d, 92, 310, 1.45, phase, (164, 117, 244, 130))
-    draw_crown(d, 600, 104, .95)
-    d.rounded_rectangle((1010, 84, 1086, 143), radius=9,
-                        fill=(38, 9, 28, 200), outline=(255, 93, 113, 190), width=2)
-    d.text((1048, 103), "AM//", font=font(SANS_BOLD, 16),
-           fill=(255, 117, 132, 245), anchor="mm")
-    d.line((1024, 124, 1034, 124, 1040, 117, 1048, 131, 1055, 121, 1073, 121),
-           fill=(255, 85, 110, 210), width=2)
-    draw_glow_text(img, (600, 197), "JOSHUA SARKAR", font(SERIF, 90),
-                   (255, 236, 198, 255), GOLD, blur=11)
+    draw_tentacle(d, 92, 392, 1.55, phase, (164, 117, 244, 145))
+    draw_crown(d, 600, 91, 1.05)
+    d.rounded_rectangle((1010, 76, 1086, 135), radius=9,
+                        fill=(38, 9, 28, 210), outline=(255, 93, 113, 210), width=2)
+    d.text((1048, 95), "AM//", font=font(SANS_BOLD, 18),
+           fill=(255, 117, 132, 255), anchor="mm")
+    d.line((1024, 116, 1034, 116, 1040, 109, 1048, 123, 1055, 113, 1073, 113),
+           fill=(255, 85, 110, 230), width=2)
+    draw_glow_text(img, (600, 207), "JOSHUA SARKAR", font(SERIF, 90),
+                   (255, 236, 198, 255), GOLD, blur=13)
     d = ImageDraw.Draw(img)
-    center_text(d, (600, 254), "B.TECH CSE  ·  AI/ML  ·  GRAPHIC ERA UNIVERSITY",
-                font(SANS_BOLD, 24), (230, 222, 255, 255))
-    center_text(d, (600, 308), "DEHRADUN, INDIA  ·  PRODUCTION SYSTEMS  ·  INDEPENDENT RESEARCH",
-                font(ITALIC, 22), (255, 225, 205, 255))
-    center_text(d, (600, 350), "SOFTWARE THAT PEOPLE USE  ·  HORROR THAT LINGERS",
-                font(SANS_BOLD, 17), (139, 221, 248, 245))
+    center_text(d, (600, 292), "B.TECH CSE  ·  AI/ML  ·  GRAPHIC ERA UNIVERSITY",
+                font(SANS_BOLD, 25), (230, 222, 255, 255))
+    center_text(d, (600, 351), "DEHRADUN, INDIA  ·  PRODUCTION SYSTEMS  ·  INDEPENDENT RESEARCH",
+                font(ITALIC, 23), (255, 225, 205, 255))
+    center_text(d, (600, 405), "SOFTWARE THAT PEOPLE USE  ·  HORROR THAT LINGERS",
+                font(SANS_BOLD, 18), (139, 221, 248, 245))
     return img.convert("RGB")
 
 
